@@ -1,128 +1,166 @@
+/*
+Mobile-first layout with a Normalize reset.
+*/
+
+/*********************************************************************
+ LOADS IN A NICE RESET TO ENSURE ALL BROWSERS HAVE THE SAME BASE STYLES
+*********************************************************************/
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css');
+
+/*********************************************************************
+  MOBILE / BASE STYLES
+*********************************************************************/
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
+html,
 body {
-    background-color: #f2fcfc;
-    font-family: sans-serif
-}
-
-body,
-html {
-    /* Sets default font-size to 16px, ensuring 1em = 16px; */
-    font-family: sans-serif font-size: 16px;
+  /* Base typography */
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #f2fcfc;
+  margin: 0;
+  padding: 0;
 }
 
 /* responsive images */
 img {
-    width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
+/* HEADINGS */
+
 h1 {
-    font-family: 'EB Garamond', serif;
+  font-family: 'EB Garamond', serif;
+  font-weight: 400;       /* keeps it from looking super bold */
+  font-size: 2rem;
+  margin: 0.5em 0 0.25em;
 }
 
 h2 {
-    font-family: 'Crimson Text', serif;
-    font-size: 1.5 em;
-}
-
-h4 {
-    font-family: sans-serif;
-    font-size: .75em;
-    text-align: left;
+  font-family: 'Crimson Text', serif;
+  font-style: italic;      /* more italicized subhead */
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin: 0 0 0.75em;
 }
 
 h3 {
-    font-family: 'Bowlby One', cursive;
-    text-align: center;
+  font-family: 'Bowlby One', cursive;
+  text-align: center;
+  margin: 1.5em 0 0.75em;
 }
 
+h4 {
+  font-family: sans-serif;
+  font-size: 0.75rem;
+  text-align: left;
+  margin: 0.1em 0;
+}
+
+/* TEXT & FIGURES */
+
 figcaption {
-    line-height: 1.1em;
-    font-size: .8em;
-    color: gray
+  line-height: 1.1em;
+  font-size: 0.8em;
+  color: gray;
+  margin-top: 0.25em;
 }
 
 hr {
-    height: 4px;
-    background: gray;
+  height: 4px;
+  background: gray;
+  border: none;
+  margin: 1.5em 0;
 }
+
+p.intro {
+  font-size: 1rem;
+}
+
+/* LAYOUT */
 
 .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 10px;
-}
-
-.icon-container 2 {
-    width: 50% max-width: 1200px;
-    margin: 0 auto;
-    padding: 30px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
 }
 
 .main_img {
-    width: 100%;
+  width: 100%;
 }
 
 .head-photo {
-    font-size: 1em;
-    color: #f53307;
-    margin: 5px;
+  font-size: 1em;
+  color: #f53307;
+  margin: 5px 0;
 }
 
+/* Icon / graphic area */
+
 .icon-container img {
-    display: block;
-    max-width: 300px;
-    margin: auto;
+  display: block;
+  max-width: 300px;
+  margin: auto;
 }
 
 .graphic-text {
-    margin: auto;
-    color: Black;
+  margin: auto;
+  color: black;
+}
+
+/* If you need a second icon container variant */
+.icon-container-2 {
+  width: 50%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
 }
 
 /*********************************************************************
-  YOUR TABLET/DESKTOP STYLES GO HERE
+  TABLET & UP STYLES
 *********************************************************************/
-@media(min-width: 681px) {
+@media (min-width: 681px) {
 
-    /* Any adjustments for tablets and larger go here.
-    Note these styles will be applied to anything 681px or larger -- so tablet AND desktop */
-    p.intro {
-        max-width: 65%,
-    }
+  /* Any adjustments for tablets and larger go here */
 
-    .icon-container {
-        /* Flex box styles go on the flex box element */
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
+  p.intro {
+    max-width: 65%;
+    margin: 0 auto 1em;
+  }
 
-    .graphic {
-        /* There are many ways to handle sizing, but flex-basis is the one that I like best for control.
-     * There are three elements so I made it 30%. With justify content set to space between, the extra 3% per element will go to negative space
-     * serving as gutters */
-        flex-basis: 30%;
-        /* font-size: 1.3em; */
-    }
+  .icon-container {
+    /* Flexbox layout for icons/graphics */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+  }
 
-    .graphic-text {
-        padding: 10px;
-        /* width: 500px; */
-    }
+  .graphic {
+    /* Three columns: about 30% each */
+    flex-basis: 30%;
+  }
+
+  .graphic-text {
+    padding: 10px;
+  }
 }
 
 /*********************************************************************
-  YOUR DESKTOP-ONLY STYLES GO HERE
+  DESKTOP-ONLY STYLES
 *********************************************************************/
-@media(min-width: 900px) {
+@media (min-width: 900px) {
 
-    /* Any adjustments for desktop and larger go here.
-    Note these styles will be applied to anything 729px or larger -- so desktop */
-    .container {
-        max-width: 600px;
-    }
+  /* Any adjustments for desktop and larger go here */
+
+  .container {
+    max-width: 600px;
+  }
 }
+
