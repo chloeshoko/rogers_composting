@@ -20,7 +20,8 @@ You will find this is far easier than the opposite task of using CSS to cram you
 
 body {
     background-color: #f2fcfc;
-    font-family: sans-serif
+    font-family: sans-serif;
+ font-size: 16px;
 }
 
 body,
@@ -77,6 +78,12 @@ hr {
     margin: 0 auto;
     padding: 30px;
 }
+
+.intro { 
+    font-family: sans-serif, bold;
+ font-size: 16px; 
+}
+ 
 
 .main_img {
     width: 100%;
